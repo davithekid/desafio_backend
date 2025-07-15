@@ -5,8 +5,8 @@ import jakarta.validation.constraints.Positive;
 
 // apenas preciso mandar o valor
 public record TransacaoRequestDTO(
-        @NotNull(message = "O valor é obrigatório")
-        @Positive(message = "Deve ser positibvo")
+        @NotNull(message = "O valor não pode ser nulo.")
+        @Positive(message = "O valor deve ser positivo")
         Double valor) {
 }
 
