@@ -7,6 +7,7 @@ import com.example.desafio_itau.repository.TransacaoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class TransacaoService {
@@ -32,5 +33,12 @@ public class TransacaoService {
         transacaoRepository.save(entity);
         return new TransacaoResponseDTO(entity);
     }
-    
+
+    // METEDO DELETE
+
+    public void deleteById(UUID id){
+       transacaoRepository.deleteById(id);
+
+    }
+
 }
