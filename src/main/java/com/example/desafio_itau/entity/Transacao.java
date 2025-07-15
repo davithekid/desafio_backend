@@ -1,6 +1,6 @@
 package com.example.desafio_itau.entity;
 
-import com.example.desafio_itau.dto.TransasaoRequestDTO;
+import com.example.desafio_itau.dto.TransacaoRequestDTO;
 import jakarta.persistence.*;
 
 
@@ -16,7 +16,7 @@ public class Transacao {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID ID;
 
-    private double valor;
+    private Double valor;
 
     @Column(name = "dataHora", columnDefinition = "DATETIME")
     private LocalDateTime dataHora;
@@ -32,7 +32,7 @@ public class Transacao {
     public Transacao() {
     }
 
-    public Transacao(TransasaoRequestDTO dto) {
+    public Transacao(TransacaoRequestDTO dto) {
         this.valor = dto.valor();
 
     }

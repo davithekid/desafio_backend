@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 // RESPONSE
-public record TransacaoResponseDTO(UUID id, double valor, LocalDateTime dataHora) {
+public record TransacaoResponseDTO(UUID id, Double valor, LocalDateTime dataHora) {
     public TransacaoResponseDTO(Transacao transacao){
         this(transacao.getID(), transacao.getValor(), transacao.getDataHora());
     }

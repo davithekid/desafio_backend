@@ -1,7 +1,7 @@
 package com.example.desafio_itau.service;
 
 import com.example.desafio_itau.dto.TransacaoResponseDTO;
-import com.example.desafio_itau.dto.TransasaoRequestDTO;
+import com.example.desafio_itau.dto.TransacaoRequestDTO;
 import com.example.desafio_itau.entity.Transacao;
 import com.example.desafio_itau.repository.TransacaoRepository;
 import org.springframework.stereotype.Service;
@@ -28,7 +28,7 @@ public class TransacaoService {
     }
 
     // METODO POST
-    public TransacaoResponseDTO postDTO(TransasaoRequestDTO data) {
+    public TransacaoResponseDTO postDTO( TransacaoRequestDTO data) {
         Transacao entity = new Transacao(data);
         transacaoRepository.save(entity);
         return new TransacaoResponseDTO(entity);

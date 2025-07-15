@@ -1,9 +1,10 @@
 package com.example.desafio_itau.controller;
 
 import com.example.desafio_itau.dto.TransacaoResponseDTO;
-import com.example.desafio_itau.dto.TransasaoRequestDTO;
+import com.example.desafio_itau.dto.TransacaoRequestDTO;
 import com.example.desafio_itau.repository.TransacaoRepository;
 import com.example.desafio_itau.service.TransacaoService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,7 +33,7 @@ public class TransacaoController {
 
     // POST.
     @PostMapping
-    public ResponseEntity<TransacaoResponseDTO> postDto(@RequestBody TransasaoRequestDTO data){
+    public ResponseEntity<TransacaoResponseDTO> postDto(@RequestBody @Valid TransacaoRequestDTO data){
         TransacaoResponseDTO saved = transacaoService.postDTO(data);
         return ResponseEntity.ok(saved);
     }
