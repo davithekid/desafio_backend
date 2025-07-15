@@ -1,7 +1,7 @@
 package com.example.desafio_itau.controller;
 
-import com.example.desafio_itau.dto.TransacaoGetDTO;
-import com.example.desafio_itau.dto.TransacaoPostDTO;
+import com.example.desafio_itau.dto.TransacaoResponseDTO;
+import com.example.desafio_itau.dto.TransasaoRequestDTO;
 import com.example.desafio_itau.repository.TransacaoRepository;
 import com.example.desafio_itau.service.TransacaoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,6 @@ public class TransacaoController {
     private TransacaoRepository transacaoRepository;
     private TransacaoService transacaoService;
 
-
     public TransacaoController(TransacaoRepository transacaoRepository, TransacaoService transacaoService) {
         this.transacaoRepository = transacaoRepository;
         this.transacaoService = transacaoService;
@@ -26,13 +25,14 @@ public class TransacaoController {
 
     // GET.
     @GetMapping
-    public List<TransacaoGetDTO> getAll(){
+    public List<TransacaoResponseDTO> getAll(){
         return transacaoService.getAllTodos();
     }
 
+    // POST.
     @PostMapping
-    public ResponseEntity<TransacaoGetDTO> postDto(@RequestBody TransacaoPostDTO data){
-        TransacaoGetDTO saved = transacaoService.postDTO(data);
+    public ResponseEntity<TransacaoResponseDTO> postDto(@RequestBody TransasaoRequestDTO data){
+        TransacaoResponseDTO saved = transacaoService.postDTO(data);
         return ResponseEntity.ok(saved);
     }
 
