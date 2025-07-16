@@ -1,10 +1,9 @@
 package com.example.desafio_itau.repository;
 
-import com.example.desafio_itau.Interface.EstatisticaView;
+
 import com.example.desafio_itau.entity.Estatistica;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.Repository;
 
 import java.util.List;
 
