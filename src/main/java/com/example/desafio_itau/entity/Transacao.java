@@ -21,7 +21,6 @@ public class Transacao {
     @Column(name = "dataHora", columnDefinition = "DATETIME")
     private LocalDateTime dataHora;
 
-
     // metodo para definir hora
     // tornando-o persistente
     @PrePersist

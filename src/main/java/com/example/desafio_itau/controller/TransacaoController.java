@@ -37,6 +37,8 @@ public class TransacaoController {
         TransacaoResponseDTO saved = transacaoService.postDTO(data);
         return ResponseEntity.ok(saved);
     }
+
+    // DELETE.
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable("id")UUID id){
         transacaoRepository.deleteById(id);

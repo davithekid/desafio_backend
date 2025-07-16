@@ -38,7 +38,6 @@ public class TransacaoService {
 
     public void deleteById(UUID id){
        transacaoRepository.deleteById(id);
-
     }
 
 }
